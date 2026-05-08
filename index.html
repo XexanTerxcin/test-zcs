@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="ZUMS Computer Society - A student-driven tech hub for innovation, workshops, robotics, esports, programming, AI/ML, and cybersecurity at ZNRF University of Management Sciences.">
+  <meta name="keywords" content="ZUMS Computer Society, ZCS, tech club, programming, AI, robotics, cybersecurity, esports, workshops, ZNRF University">
+  <meta name="author" content="ZUMS Computer Society">
+  <meta name="theme-color" content="#00ff00">
+  <meta property="og:title" content="ZUMS Computer Society">
+  <meta property="og:description" content="CODE CREATE CHALLENGE COMPETE CONNECT. The official CSE club of ZNRF University of Management Sciences.">
+  <meta property="og:type" content="website">
+  <title>ZUMS Computer Society</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom Theme CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="zcs-logo-transparent.png" type="image/png">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- Canvas for neon particle pointer tracker -->
+  <canvas id="pointerCanvas"></canvas>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="zcs-logo-transparent.png" alt="ZCS Logo" onerror="this.src='https://placehold.co/60x60/0a0a0a/00ff00?text=ZCS'">
+        <span>ZUMS Computer Society</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#wings" id="wingsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Wings</a>
+            <ul class="dropdown-menu" aria-labelledby="wingsDropdown">
+              <li><a class="dropdown-item" href="#workshops-wing">Workshops</a></li>
+              <li><a class="dropdown-item" href="#robotics">Robotics</a></li>
+              <li><a class="dropdown-item" href="#esports">Esports</a></li>
+              <li><a class="dropdown-item" href="#programming">Programming</a></li>
+              <li><a class="dropdown-item" href="#ai">AI &amp; ML</a></li>
+              <li><a class="dropdown-item" href="#cybersecurity">Cybersecurity</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="forms.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="btn btn-outline-primary btn-sm" href="login.html">Login</a>
+          </li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn btn-primary btn-sm" href="register.html">Join</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero-section" id="home">
+    <video class="hero-bg-video" autoplay loop muted playsinline>
+      <source src="wing.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content animate-on-scroll">
+      <h1>ZUMS Computer Society</h1>
+      <p class="lead">Innovate. Code. Compete. A student-driven hub for technology, creativity, and collaboration at ZNRF University of Management Sciences.</p>
+      <div class="hero-cta d-flex flex-wrap justify-content-center gap-3">
+        <a href="register.html" class="btn btn-primary btn-lg pulse-glow">Join Us</a>
+        <a href="#about" class="btn btn-outline-primary btn-lg">Explore</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="py-5">
+    <div class="container py-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 animate-on-scroll">
+          <h2 class="section-title text-start">About Us</h2>
+          <p class="fs-5 text-light">ZUMS Computer Society is the premier student-run technology organization at ZNRF University of Management Sciences. We bridge the gap between academic theory and real-world application through hands-on projects, competitive events, and collaborative learning environments.</p>
+          <p class="text-secondary">Founded with a mission to foster innovation and technical excellence, ZCS has grown into a thriving community of developers, engineers, researchers, and digital creatives who push the boundaries of what students can achieve.</p>
+          <div class="d-flex gap-3 mt-4">
+            <a href="forms.html" class="btn btn-primary">Join an Event</a>
+            <a href="contact.html" class="btn btn-outline-primary">Collaborate</a>
+          </div>
+        </div>
+        <div class="col-lg-6 animate-on-scroll">
+          <div class="glass-card p-4">
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="text-center p-3">
+                  <div class="fs-2 fw-bold text-white">500+</div>
+                  <div class="text-secondary small">Active Members</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="text-center p-3">
+                  <div class="fs-2 fw-bold text-white">50+</div>
+                  <div class="text-secondary small">Annual Events</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="text-center p-3">
+                  <div class="fs-2 fw-bold text-white">6</div>
+                  <div class="text-secondary small">Specialized Wings</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="text-center p-3">
+                  <div class="fs-2 fw-bold text-white">12</div>
+                  <div class="text-secondary small">Industry Partners</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WINGS SECTION ANCHOR ===== -->
+  <div id="wings"></div>
+
+  <!-- ===== WINGS: WORKSHOPS ===== -->
+  <section id="workshops-wing" class="py-5">
+    <div class="container py-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 order-lg-1 animate-on-scroll">
+          <div class="wing-video">
+            <video class="w-100 rounded-4" style="border:2px solid #00ff00;box-shadow:0 0 25px rgba(0,255,0,0.4);" src="wing.mp4" autoplay loop muted playsinline></video>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-2 animate-on-scroll">
+          <h2 class="section-title text-start">Workshops &amp; Training</h2>
+          <p class="fs-5">Learning and mentorship for all skill levels. Our workshop wing organizes bootcamps, hands-on labs, and certification prep sessions that transform beginners into confident technologists.</p>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Beginner to advanced coding bootcamps</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Industry-certified mentor guidance</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Project-based learning tracks</li>
+          </ul>
+          <button class="join-btn mt-3">Join/Register</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WINGS: ROBOTICS ===== -->
+  <section id="robotics" class="py-5" style="background:#0e0e0e;">
+    <div class="container py-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 order-lg-2 animate-on-scroll">
+          <div class="wing-video">
+            <video class="w-100 rounded-4" style="border:2px solid #00ff00;box-shadow:0 0 25px rgba(0,255,0,0.4);" src="wing.mp4" autoplay loop muted playsinline></video>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1 animate-on-scroll text-lg-end">
+          <h2 class="section-title text-lg-end">Robotics</h2>
+          <p class="fs-5">Creation and motion — building machines that move, sense, and think. From Arduino prototypes to autonomous rover projects, our robotics wing is where hardware meets ingenuity.</p>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Microcontroller &amp; IoT integration</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Autonomous vehicle challenges</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Inter-university competitions</li>
+          </ul>
+          <button class="join-btn mt-3">Join/Register</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WINGS: ESPORTS ===== -->
+  <section id="esports" class="py-5">
+    <div class="container py-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 order-lg-1 animate-on-scroll">
+          <div class="wing-video">
+            <video class="w-100 rounded-4" style="border:2px solid #00ff00;box-shadow:0 0 25px rgba(0,255,0,0.4);" src="wing.mp4" autoplay loop muted playsinline></video>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-2 animate-on-scroll">
+          <h2 class="section-title text-start">Esports</h2>
+          <p class="fs-5">Energy and teamwork in competitive gaming. Our esports wing organizes tournaments, scrims, and streaming events that build strategy, communication, and community.</p>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Monthly intra-club tournaments</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Inter-university leagues</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Content creation &amp; streaming</li>
+          </ul>
+          <button class="join-btn mt-3">Join/Register</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WINGS: PROGRAMMING ===== -->
+  <section id="programming" class="py-5" style="background:#0e0e0e;">
+    <div class="container py-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 order-lg-2 animate-on-scroll">
+          <div class="wing-video">
+            <video class="w-100 rounded-4" style="border:2px solid #00ff00;box-shadow:0 0 25px rgba(0,255,0,0.4);" src="wing.mp4" autoplay loop muted playsinline></video>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1 animate-on-scroll text-lg-end">
+          <h2 class="section-title text-lg-end">Competitive Programming</h2>
+          <p class="fs-5">Logic and mastery through coding challenges. We train members for ICPC, Codeforces, and hackathons with structured problem-solving curricula and weekly practice contests.</p>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Weekly practice contests</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>ICPC &amp; NCNA training camp</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Algorithm deep-dive sessions</li>
+          </ul>
+          <button class="join-btn mt-3">Join/Register</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WINGS: AI & ML ===== -->
+  <section id="ai" class="py-5">
+    <div class="container py-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 order-lg-1 animate-on-scroll">
+          <div class="wing-video">
+            <video class="w-100 rounded-4" style="border:2px solid #00ff00;box-shadow:0 0 25px rgba(0,255,0,0.4);" src="wing.mp4" autoplay loop muted playsinline></video>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-2 animate-on-scroll">
+          <h2 class="section-title text-start">AI &amp; Machine Learning</h2>
+          <p class="fs-5">Exploring intelligence and discovery through modern algorithms. From neural networks to NLP, our AI wing demystifies cutting-edge research and turns it into accessible projects.</p>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Deep learning &amp; computer vision labs</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>LLM &amp; generative AI workshops</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Research paper reading groups</li>
+          </ul>
+          <button class="join-btn mt-3">Join/Register</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WINGS: CYBERSECURITY ===== -->
+  <section id="cybersecurity" class="py-5" style="background:#0e0e0e;">
+    <div class="container py-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 order-lg-2 animate-on-scroll">
+          <div class="wing-video">
+            <video class="w-100 rounded-4" style="border:2px solid #00ff00;box-shadow:0 0 25px rgba(0,255,0,0.4);" src="wing.mp4" autoplay loop muted playsinline></video>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1 animate-on-scroll text-lg-end">
+          <h2 class="section-title text-lg-end">Cybersecurity &amp; Ethical Hacking</h2>
+          <p class="fs-5">Protection and resilience in the digital world. Learn penetration testing, threat analysis, and secure coding through CTF challenges and red-team simulations.</p>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Capture The Flag (CTF) contests</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Kali Linux &amp; OSINT workshops</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Secure coding &amp; audit practices</li>
+          </ul>
+          <button class="join-btn mt-3">Join/Register</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PARTNERS / COLLABORATORS ===== -->
+  <section id="partners" class="py-5">
+    <div class="container py-4">
+      <h2 class="section-title">Partners &amp; Collaborators</h2>
+      <p class="section-subtitle">Trusted by leading academic departments and industry partners</p>
+    </div>
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <span class="marquee-item">ZNRF University</span>
+        <span class="marquee-item">CSE Department</span>
+        <span class="marquee-item">IEEE Student Branch</span>
+        <span class="marquee-item">ACM Chapter</span>
+        <span class="marquee-item">BAICT</span>
+        <span class="marquee-item">DevHub Dhaka</span>
+        <span class="marquee-item">Google DSC</span>
+        <span class="marquee-item">Microsoft Learn</span>
+        <span class="marquee-item">AWS Educate</span>
+        <span class="marquee-item">Oracle Academy</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="marquee-item">ZNRF University</span>
+        <span class="marquee-item">CSE Department</span>
+        <span class="marquee-item">IEEE Student Branch</span>
+        <span class="marquee-item">ACM Chapter</span>
+        <span class="marquee-item">BAICT</span>
+        <span class="marquee-item">DevHub Dhaka</span>
+        <span class="marquee-item">Google DSC</span>
+        <span class="marquee-item">Microsoft Learn</span>
+        <span class="marquee-item">AWS Educate</span>
+        <span class="marquee-item">Oracle Academy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RECENT ACTIVITY ===== -->
+  <section id="recent-activity" class="py-5" style="background:#0e0e0e;">
+    <div class="container py-5">
+      <h2 class="section-title">Recent Activity</h2>
+      <p class="section-subtitle">Highlights from our latest workshops, competitions, and community events</p>
+      <div class="row g-4 mt-2">
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="card h-100">
+            <div class="blog-thumb-placeholder">
+              <span class="thumb-icon"><i class="bi bi-lightning-charge-fill"></i></span>
+            </div>
+            <div class="card-body">
+              <div class="blog-meta">
+                <span><i class="bi bi-calendar3"></i> Jan 15, 2026</span>
+                <span><i class="bi bi-clock"></i> 3 min read</span>
+              </div>
+              <h4 class="card-title">Generative AI Bootcamp</h4>
+              <p class="card-text">Hands-on session exploring LLMs, prompt engineering, and creative AI models. Build your first chatbot in 3 hours with expert mentors guiding every step.</p>
+              <button class="read-more">Read More &rarr;</button>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="card h-100">
+            <div class="blog-thumb-placeholder">
+              <span class="thumb-icon"><i class="bi bi-shield-lock-fill"></i></span>
+            </div>
+            <div class="card-body">
+              <div class="blog-meta">
+                <span><i class="bi bi-calendar3"></i> Feb 02, 2026</span>
+                <span><i class="bi bi-clock"></i> 4 min read</span>
+              </div>
+              <h4 class="card-title">Ethical Hacking 101</h4>
+              <p class="card-text">Learn penetration testing, network scanning and defense strategies. Real-world demos with Kali Linux in our fully equipped cybersecurity lab.</p>
+              <button class="read-more">Read More &rarr;</button>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div class="card h-100">
+            <div class="blog-thumb-placeholder">
+              <span class="thumb-icon"><i class="bi bi-cpu-fill"></i></span>
+            </div>
+            <div class="card-body">
+              <div class="blog-meta">
+                <span><i class="bi bi-calendar3"></i> Feb 20, 2026</span>
+                <span><i class="bi bi-clock"></i> 2 min read</span>
+              </div>
+              <h4 class="card-title">Arduino &amp; Sensors Workshop</h4>
+              <p class="card-text">Build smart devices from scratch. Introduction to microcontrollers and IoT integration. Limited seats — hands-on kits provided to every participant.</p>
+              <button class="read-more">Read More &rarr;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <a href="blog.html" class="btn btn-outline-primary">View All Posts</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== UNIVERSAL FOOTER ===== -->
+  <footer class="site-footer mt-auto">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="zcs-logo-transparent.png" alt="ZCS Logo" height="50" onerror="this.src='https://placehold.co/50x50/0a0a0a/00ff00?text=ZCS'">
+            <h5 class="mb-0">ZUMS Computer Society</h5>
+          </div>
+          <p class="text-secondary">A student-driven tech hub fostering innovation, collaboration, and technical excellence at ZNRF University of Management Sciences.</p>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h5>Quick Links</h5>
+          <a href="index.html">Home</a>
+          <a href="blog.html">Blog</a>
+          <a href="forms.html">Events</a>
+          <a href="contact.html">Contact</a>
+          <a href="login.html">Member Login</a>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h5>Wings</h5>
+          <a href="index.html#workshops-wing">Workshops</a>
+          <a href="index.html#robotics">Robotics</a>
+          <a href="index.html#esports">Esports</a>
+          <a href="index.html#ai">AI &amp; ML</a>
+          <a href="index.html#cybersecurity">Cybersecurity</a>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h5>Connect</h5>
+          <p class="text-secondary mb-2">Follow us for updates on events, workshops, and competitions.</p>
+          <div class="d-flex gap-2">
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-icon" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+          <p class="text-secondary mt-3 mb-0"><i class="bi bi-envelope-fill me-2"></i>zumscomputersociety@gmail.com</p>
+          <p class="text-secondary"><i class="bi bi-geo-alt-fill me-2"></i>F, 15 Pragati Sarani, Dhaka 1212</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; <span class="year-update">2026</span> ZUMS Computer Society. All rights reserved.</p>
+        <div class="mt-2">
+          <a href="privacy-policy.html" class="d-inline me-3">Privacy Policy</a>
+          <a href="terms.html" class="d-inline">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
