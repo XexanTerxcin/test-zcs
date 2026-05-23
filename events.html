@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Event registration forms for ZUMS Computer Society. Register for hackathons, workshops, competitions, and training sessions.">
+  <meta name="keywords" content="ZCS event registration, hackathon signup, workshop registration, tech event forms">
+  <meta name="author" content="ZUMS Computer Society">
+  <meta name="theme-color" content="#00ff00">
+  <title>Event Registration | ZUMS Computer Society</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom Theme CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="zcs-logo-transparent.png" type="image/png">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <canvas id="pointerCanvas"></canvas>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="zcs-logo-transparent.png" alt="ZCS Logo" onerror="this.src='https://placehold.co/60x60/0a0a0a/00ff00?text=ZCS'">
+        <span>ZUMS Computer Society</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link active" href="forms.html" aria-current="page">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="btn btn-outline-primary btn-sm" href="login.html">Login</a>
+          </li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn btn-primary btn-sm" href="register.html">Join</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== FORMS HERO ===== -->
+  <section class="py-5 mt-5" style="background:linear-gradient(180deg,#0a0a0a 0%,#0e1a0e 100%);">
+    <div class="container py-4 text-center animate-on-scroll">
+      <h1 class="section-title">Event Registration</h1>
+      <p class="section-subtitle">Secure your spot in upcoming workshops, hackathons, and competitions</p>
+    </div>
+  </section>
+
+  <!-- ===== ACTIVE EVENTS LIST ===== -->
+  <section class="py-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 animate-on-scroll">
+          <div class="glass-card p-4 h-100">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="stat-icon" style="margin-bottom:0;"><i class="bi bi-lightning-charge-fill"></i></div>
+              <div>
+                <h4 class="mb-0" style="color:var(--neon-green);">Spring Hackathon 2026</h4>
+                <span class="badge bg-primary">Open</span>
+              </div>
+            </div>
+            <p class="text">48-hour coding marathon. Build innovative solutions around Smart Campus themes. Cash prizes, internships, and mentorship await.</p>
+            <ul class="list-unstyled text small mb-3">
+              <li><i class="bi bi-calendar3 me-2"></i>April 10 – 12, 2026</li>
+              <li><i class="bi bi-geo-alt me-2"></i>CSE Building, Lab 301–305</li>
+              <li><i class="bi bi-people me-2"></i>Teams of 3–4 members</li>
+            </ul>
+            <a href="#eventRegForm" class="btn btn-primary">Register Now</a>
+          </div>
+        </div>
+        <div class="col-md-6 animate-on-scroll">
+          <div class="glass-card p-4 h-100">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="stat-icon" style="margin-bottom:0;"><i class="bi bi-shield-lock-fill"></i></div>
+              <div>
+                <h4 class="mb-0" style="color:var(--neon-green);">CyberSec Capture The Flag</h4>
+                <span class="badge bg-primary">Open</span>
+              </div>
+            </div>
+            <p class="text">Test your ethical hacking skills in a day-long CTF. Categories include web exploitation, cryptography, forensics, and reverse engineering.</p>
+            <ul class="list-unstyled text small mb-3">
+              <li><i class="bi bi-calendar3 me-2"></i>March 28, 2026</li>
+              <li><i class="bi bi-geo-alt me-2"></i>Online + CSE Lab 204</li>
+              <li><i class="bi bi-person me-2"></i>Individual or pairs</li>
+            </ul>
+            <a href="#eventRegForm" class="btn btn-primary">Register Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer mt-auto">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="zcs-logo-transparent.png" alt="ZCS Logo" height="50" onerror="this.src='https://placehold.co/50x50/0a0a0a/00ff00?text=ZCS'">
+            <h5 class="mb-0">ZUMS Computer Society</h5>
+          </div>
+          <p class="text">A student-driven tech hub fostering innovation, collaboration, and technical excellence at ZNRF University of Management Sciences.</p>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h5>Quick Links</h5>
+          <a href="index.html">Home</a>
+          <a href="blog.html">Blog</a>
+          <a href="forms.html">Events</a>
+          <a href="contact.html">Contact</a>
+          <a href="login.html">Member Login</a>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h5>Wings</h5>
+          <a href="index.html#workshops-wing">Workshops</a>
+          <a href="index.html#robotics">Robotics</a>
+          <a href="index.html#esports">Esports</a>
+          <a href="index.html#ai">AI &amp; ML</a>
+          <a href="index.html#cybersecurity">Cybersecurity</a>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h5>Connect</h5>
+          <p class="text mb-2">Follow us for updates on events, workshops, and competitions.</p>
+          <div class="d-flex gap-2">
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-icon" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+          <p class="text mt-3 mb-0"><i class="bi bi-envelope-fill me-2"></i>zumscomputersociety@gmail.com</p>
+          <p class="text"><i class="bi bi-geo-alt-fill me-2"></i>F, 15 Pragati Sarani, Dhaka 1212</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; <span class="year-update">2026</span> ZUMS Computer Society. All rights reserved.</p>
+        <div class="mt-2">
+          <a href="privacy-policy.html" class="d-inline me-3">Privacy Policy</a>
+          <a href="terms.html" class="d-inline">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
