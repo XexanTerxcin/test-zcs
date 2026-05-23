@@ -1064,6 +1064,35 @@ section {
   transform: translateY(-2px);
 }
 
+/* ---------- CONTACT PAGE Social Icons --------- */
+.social-icon1 {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #2a2a2a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 1.7rem;  /* Increased from 1.1rem for better visibility */
+  transition: all 0.3s ease;
+  margin: 0 0.25rem;
+  text-decoration: none;
+  flex-shrink: 0;  /* Prevents shrinking */
+}
+
+.social-icon1 i {
+  font-size: 1.8rem;  /* Explicit icon size */
+  line-height: 1;      /* Prevents extra height from line-height */
+}
+
+.social-icon1:hover {
+  border-color: var(--neon-green);
+  color: var(--neon-green);
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.3);
+  transform: translateY(-2px);
+}
+
 
 /* ---------- FORMS PAGE ---------- */
 .form-section {
